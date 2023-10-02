@@ -59,8 +59,9 @@ export default function AppInput({
 const styles = StyleSheet.create({
   label: {
     color: '#000000',
-    fontSize: 18,
+    fontSize: 16,
     marginBottom: 10,
+    fontFamily: 'Comfortaa-Bold',
   },
   mainInput: color => ({
     paddingVertical: (phoneHeight * 0.034) / 2,
