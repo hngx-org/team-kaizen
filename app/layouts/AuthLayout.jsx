@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, SafeAreaView, Text} from 'react-native';
+import {View, StyleSheet, SafeAreaView, ScrollView, Text} from 'react-native';
 import {phoneFontScale, phoneHeight} from '../utils/dimensions';
 
 const AuthLayouts = ({children, title, desc}) => {
@@ -9,7 +9,9 @@ const AuthLayouts = ({children, title, desc}) => {
         <Text style={{...styles.text, color: '#ffffff8b'}}>{title}</Text>
         <Text style={styles.text}>{desc} </Text>
       </View>
-      <View style={styles.inner}>{children}</View>
+      <View style={styles.inner}>
+        <ScrollView>{children}</ScrollView>
+      </View>
     </SafeAreaView>
   );
 };
