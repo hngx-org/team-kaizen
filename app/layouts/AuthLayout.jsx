@@ -10,7 +10,7 @@ const AuthLayouts = ({children, title, desc}) => {
         <Text style={styles.text}>{desc} </Text>
       </View>
       <View style={styles.inner}>
-        <ScrollView>{children}</ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>{children}</ScrollView>
       </View>
     </SafeAreaView>
   );
