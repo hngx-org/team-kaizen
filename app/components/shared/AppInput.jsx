@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import {phoneFontScale, phoneHeight, phoneWidth} from '../../utils/dimensions';
 import {StyleSheet} from 'react-native';
+import AppText from '../AppText';
 
 export default function AppInput({
   setText,
@@ -25,7 +26,7 @@ export default function AppInput({
       style={{
         width: '100%',
       }}>
-      <Text style={styles.label}>{label}</Text>
+      <AppText style={styles.label}>{label}</AppText>
       <View
         style={{
           marginBottom: (phoneHeight * 0.07) / 2,

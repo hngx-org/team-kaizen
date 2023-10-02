@@ -5,12 +5,13 @@ import {
   Text,
   View,
 } from 'react-native';
+import AppText from '../components/AppText';
 
 function HomeScreen(): JSX.Element {
 
   return (
     <SafeAreaView style={styles.main}>
-        <Text> Home </Text>
+        <AppText> Home </AppText>
     </SafeAreaView>
   );
 }

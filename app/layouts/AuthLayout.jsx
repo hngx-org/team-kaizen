@@ -1,13 +1,14 @@
 import React from 'react';
 import {View, StyleSheet, SafeAreaView, ScrollView, Text} from 'react-native';
 import {phoneFontScale, phoneHeight} from '../utils/dimensions';
+import AppText from '../components/AppText';
 
 const AuthLayouts = ({children, title, desc}) => {
   return (
     <SafeAreaView style={styles.main}>
       <View style={{paddingHorizontal: 34, paddingVertical: 50}}>
-        <Text style={{...styles.text, color: '#ffffff8b'}}>{title}</Text>
-        <Text style={styles.text}>{desc} </Text>
+        <AppText style={{...styles.text, color: '#ffffff8b'}}>{title}</AppText>
+        <AppText style={styles.text}>{desc} </AppText>
       </View>
       <View style={styles.inner}>
         <ScrollView showsVerticalScrollIndicator={false}>{children}</ScrollView>

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
 import {phoneHeight} from '../../utils/dimensions';
+import AppText from '../AppText';
 
 export default function AppButton({
   title = 'Click Me',
@@ -21,22 +22,21 @@ export default function AppButton({
         marginTop: 20,
         ...style,
       }}>
-      <Text
+      <AppText
         disabled={disabled}
         style={{
           textTransform: 'capitalize',
           textAlign: 'center',
           paddingVertical: (phoneHeight * 0.03) / 2,
+          paddingBottom: (phoneHeight * 0.04) / 2,
           fontSize: 18,
           fontWeight: '300',
           borderColor: bgColor,
-          fontFamily: 'Satoshi-Black',
           color: '#FFFFFF',
-          fontWeight: 800,
           ...style,
         }}>
         {title}
-      </Text>
+      </AppText>
     </TouchableOpacity>
   );
 }

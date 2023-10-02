@@ -8,6 +8,7 @@ import {
 import AppButton from '../components/shared/AppButton';
 import AppInput from '../components/shared/AppInput';
 import AuthLayouts from '../layouts/AuthLayout';
+import AppText from '../components/AppText';
 
 function LoginScreen({navigation}): JSX.Element {
     
@@ -19,6 +20,12 @@ function LoginScreen({navigation}): JSX.Element {
         <AppButton title='Login' onPress={() => {
 navigation.navigate('Main')
         }} />
+        <View>
+            <AppText>Don't have an account? <AppText onPress={() => {
+navigation.navigate('Sign')
+                
+            }} style={{color: '#10B981'}}>Signup</AppText> </AppText>
+        </View>
     </AuthLayouts>
   );
 }

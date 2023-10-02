@@ -5,12 +5,13 @@ import {
   Text,
   View,
 } from 'react-native';
+import AppText from '../components/AppText';
 
 function AboutScreen(): JSX.Element {
 
   return (
     <SafeAreaView>
-        <Text> about </Text>
+        <AppText> about </AppText>
     </SafeAreaView>
   );
 }
