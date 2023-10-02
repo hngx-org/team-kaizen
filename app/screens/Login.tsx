@@ -16,7 +16,7 @@ function LoginScreen({navigation}): JSX.Element {
   return (
     <AuthLayouts title='Log in' desc="Your Very Own Virtual Assistant">
         <AppInput label='Email Address' placeholder='Type in Email Address' />
-        <AppInput label='Password' placeholder='Type in Password' />
+        <AppInput label='Password' placeholder='Type in Password' secureTextEntry={true} />
         <AppButton title='Login' onPress={() => {
 navigation.navigate('Main')
         }} />

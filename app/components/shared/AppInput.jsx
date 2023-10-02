@@ -19,6 +19,7 @@ export default function AppInput({
   multiline = false,
   maxLength,
   numberOfLines,
+  secureTextEntry,
 }) {
   const [color, setColor] = useState('#333333');
   return (
@@ -48,6 +49,7 @@ export default function AppInput({
           numberOfLines={numberOfLines}
           multiline={multiline}
           maxLength={maxLength}
+          secureTextEntry={secureTextEntry}
         />
       </View>
     </View>
