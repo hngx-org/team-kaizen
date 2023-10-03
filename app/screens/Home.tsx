@@ -1,27 +1,20 @@
 import React from 'react';
 import {
-  SafeAreaView,
-  ScrollView,StyleSheet,
-  Text,
+  StyleSheet,
   View,
 } from 'react-native';
 import AppText from '../components/AppText';
+import DashboardLayout from '../layouts/DashboardLayout';
 
 function HomeScreen(): JSX.Element {
 
   return (
-    <SafeAreaView style={styles.main}>
-        <AppText> Home </AppText>
-    </SafeAreaView>
+    <DashboardLayout>
+      <AppText> Home Page</AppText>
+    </DashboardLayout>
   );
 }
+const styles = StyleSheet.create({});
 
-const styles = StyleSheet.create({
-  main: {
-    backgroundColor: '#ffffff',
-    flex: 1,
-    justifyContent: 'space-between',
-  },
- 
-});
+
 export default HomeScreen;

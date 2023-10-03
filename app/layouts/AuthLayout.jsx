@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, StyleSheet, SafeAreaView, ScrollView, Text} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  SafeAreaView,
+  ScrollView,
+  Text,
+  StatusBar,
+} from 'react-native';
 import {phoneFontScale, phoneHeight} from '../utils/dimensions';
 import AppText from '../components/AppText';
 
@@ -13,6 +20,7 @@ const AuthLayouts = ({children, title, desc}) => {
       <View style={styles.inner}>
         <ScrollView showsVerticalScrollIndicator={false}>{children}</ScrollView>
       </View>
+      <StatusBar barStyle="light-content" />
     </SafeAreaView>
   );
 };

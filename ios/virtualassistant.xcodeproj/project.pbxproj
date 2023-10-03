@@ -8,26 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* virtualassistantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* virtualassistantTests.m */; };
+		0A0E33DD2F8A40ADA4ED5499 /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AB4355D372D4684B6307EB2 /* Comfortaa-Regular.ttf */; };
 		0C80B921A6F3F58F76C31292 /* libPods-virtualassistant.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-virtualassistant.a */; };
+		124EA607F4D44018AC9025C6 /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C9CF5D549B1419B974C6572 /* Comfortaa-Bold.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-virtualassistant-virtualassistantTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-virtualassistant-virtualassistantTests.a */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		124EA607F4D44018AC9025C6 /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C9CF5D549B1419B974C6572 /* Comfortaa-Bold.ttf */; };
-		7B5701484D1C4A0FA38914F4 /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCE46637345145379C926424 /* Comfortaa-Light.ttf */; };
-		4A51DD3BB6E94D62BD059262 /* Comfortaa-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1700D29F9AA4039BCB8E7BB /* Comfortaa-Medium.ttf */; };
-		0A0E33DD2F8A40ADA4ED5499 /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AB4355D372D4684B6307EB2 /* Comfortaa-Regular.ttf */; };
-		FE0221DEC64A4BD29FB50B26 /* Comfortaa-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF003E7B5B7749379D3EA428 /* Comfortaa-SemiBold.ttf */; };
-		14E57DFB6CBA48699CA5AA2A /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE0085EFD03F427A98F855BC /* Ubuntu-Bold.ttf */; };
-		E0B089A51E154FB8AC225583 /* Ubuntu-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE3EC8A4993A4E72B4A6E64D /* Ubuntu-BoldItalic.ttf */; };
 		13CB322F2CE74B068DD2DBB0 /* Ubuntu-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CF68B2EABB640B08B7925F8 /* Ubuntu-Italic.ttf */; };
-		EE8C03B9FE69483E84C3B7F7 /* Ubuntu-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56516ED9FAA348D599ECA78A /* Ubuntu-Light.ttf */; };
-		4FA1DDC8688649A98B167022 /* Ubuntu-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03821618BD424DE694E6FC25 /* Ubuntu-LightItalic.ttf */; };
-		75FBCEA4AE9B499FBCF4182D /* Ubuntu-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB8428CA4DA943628F227E86 /* Ubuntu-Medium.ttf */; };
-		D5DC9D92ED68475782D41148 /* Ubuntu-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3588004F09E348E88779889B /* Ubuntu-MediumItalic.ttf */; };
+		14E57DFB6CBA48699CA5AA2A /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE0085EFD03F427A98F855BC /* Ubuntu-Bold.ttf */; };
 		3D5A890BCCBD4BC69770BC08 /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E534BA029179463DBEE5C26F /* Ubuntu-Regular.ttf */; };
+		4A51DD3BB6E94D62BD059262 /* Comfortaa-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1700D29F9AA4039BCB8E7BB /* Comfortaa-Medium.ttf */; };
+		4FA1DDC8688649A98B167022 /* Ubuntu-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03821618BD424DE694E6FC25 /* Ubuntu-LightItalic.ttf */; };
 		578C2BB06A124CB2BC10B972 /* UFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = D95E5436CC2A4AE4879582DC /* UFL.txt */; };
+		75FBCEA4AE9B499FBCF4182D /* Ubuntu-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB8428CA4DA943628F227E86 /* Ubuntu-Medium.ttf */; };
+		7699B88040F8A987B510C191 /* libPods-virtualassistant-virtualassistantTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-virtualassistant-virtualassistantTests.a */; };
+		7B5701484D1C4A0FA38914F4 /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCE46637345145379C926424 /* Comfortaa-Light.ttf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D5DC9D92ED68475782D41148 /* Ubuntu-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3588004F09E348E88779889B /* Ubuntu-MediumItalic.ttf */; };
+		E0B089A51E154FB8AC225583 /* Ubuntu-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE3EC8A4993A4E72B4A6E64D /* Ubuntu-BoldItalic.ttf */; };
+		EE8C03B9FE69483E84C3B7F7 /* Ubuntu-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56516ED9FAA348D599ECA78A /* Ubuntu-Light.ttf */; };
+		FE0221DEC64A4BD29FB50B26 /* Comfortaa-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF003E7B5B7749379D3EA428 /* Comfortaa-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +44,7 @@
 		00E356EE1AD99517003FC87E /* virtualassistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = virtualassistantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* virtualassistantTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = virtualassistantTests.m; sourceTree = "<group>"; };
+		03821618BD424DE694E6FC25 /* Ubuntu-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Ubuntu-LightItalic.ttf"; path = "../app/assets/fonts/Ubuntu-LightItalic.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* virtualassistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = virtualassistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = virtualassistant/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = virtualassistant/AppDelegate.mm; sourceTree = "<group>"; };
@@ -51,27 +52,26 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = virtualassistant/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = virtualassistant/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-virtualassistant-virtualassistantTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-virtualassistant-virtualassistantTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3588004F09E348E88779889B /* Ubuntu-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Ubuntu-MediumItalic.ttf"; path = "../app/assets/fonts/Ubuntu-MediumItalic.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-virtualassistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-virtualassistant.debug.xcconfig"; path = "Target Support Files/Pods-virtualassistant/Pods-virtualassistant.debug.xcconfig"; sourceTree = "<group>"; };
+		3C9CF5D549B1419B974C6572 /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Comfortaa-Bold.ttf"; path = "../app/assets/fonts/Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
+		56516ED9FAA348D599ECA78A /* Ubuntu-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Ubuntu-Light.ttf"; path = "../app/assets/fonts/Ubuntu-Light.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-virtualassistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-virtualassistant.release.xcconfig"; path = "Target Support Files/Pods-virtualassistant/Pods-virtualassistant.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-virtualassistant-virtualassistantTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-virtualassistant-virtualassistantTests.debug.xcconfig"; path = "Target Support Files/Pods-virtualassistant-virtualassistantTests/Pods-virtualassistant-virtualassistantTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5CF68B2EABB640B08B7925F8 /* Ubuntu-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Ubuntu-Italic.ttf"; path = "../app/assets/fonts/Ubuntu-Italic.ttf"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-virtualassistant.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-virtualassistant.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AB4355D372D4684B6307EB2 /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Comfortaa-Regular.ttf"; path = "../app/assets/fonts/Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = virtualassistant/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-virtualassistant-virtualassistantTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-virtualassistant-virtualassistantTests.release.xcconfig"; path = "Target Support Files/Pods-virtualassistant-virtualassistantTests/Pods-virtualassistant-virtualassistantTests.release.xcconfig"; sourceTree = "<group>"; };
+		AE3EC8A4993A4E72B4A6E64D /* Ubuntu-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Ubuntu-BoldItalic.ttf"; path = "../app/assets/fonts/Ubuntu-BoldItalic.ttf"; sourceTree = "<group>"; };
+		BCE46637345145379C926424 /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Comfortaa-Light.ttf"; path = "../app/assets/fonts/Comfortaa-Light.ttf"; sourceTree = "<group>"; };
+		BF003E7B5B7749379D3EA428 /* Comfortaa-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Comfortaa-SemiBold.ttf"; path = "../app/assets/fonts/Comfortaa-SemiBold.ttf"; sourceTree = "<group>"; };
+		D1700D29F9AA4039BCB8E7BB /* Comfortaa-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Comfortaa-Medium.ttf"; path = "../app/assets/fonts/Comfortaa-Medium.ttf"; sourceTree = "<group>"; };
+		D95E5436CC2A4AE4879582DC /* UFL.txt */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = UFL.txt; path = ../app/assets/fonts/UFL.txt; sourceTree = "<group>"; };
+		E534BA029179463DBEE5C26F /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Ubuntu-Regular.ttf"; path = "../app/assets/fonts/Ubuntu-Regular.ttf"; sourceTree = "<group>"; };
+		EB8428CA4DA943628F227E86 /* Ubuntu-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Ubuntu-Medium.ttf"; path = "../app/assets/fonts/Ubuntu-Medium.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		3C9CF5D549B1419B974C6572 /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; name = "Comfortaa-Bold.ttf"; path = "../app/assets/fonts/Comfortaa-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		BCE46637345145379C926424 /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; name = "Comfortaa-Light.ttf"; path = "../app/assets/fonts/Comfortaa-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D1700D29F9AA4039BCB8E7BB /* Comfortaa-Medium.ttf */ = {isa = PBXFileReference; name = "Comfortaa-Medium.ttf"; path = "../app/assets/fonts/Comfortaa-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		7AB4355D372D4684B6307EB2 /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; name = "Comfortaa-Regular.ttf"; path = "../app/assets/fonts/Comfortaa-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		BF003E7B5B7749379D3EA428 /* Comfortaa-SemiBold.ttf */ = {isa = PBXFileReference; name = "Comfortaa-SemiBold.ttf"; path = "../app/assets/fonts/Comfortaa-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		EE0085EFD03F427A98F855BC /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; name = "Ubuntu-Bold.ttf"; path = "../app/assets/fonts/Ubuntu-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		AE3EC8A4993A4E72B4A6E64D /* Ubuntu-BoldItalic.ttf */ = {isa = PBXFileReference; name = "Ubuntu-BoldItalic.ttf"; path = "../app/assets/fonts/Ubuntu-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		5CF68B2EABB640B08B7925F8 /* Ubuntu-Italic.ttf */ = {isa = PBXFileReference; name = "Ubuntu-Italic.ttf"; path = "../app/assets/fonts/Ubuntu-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		56516ED9FAA348D599ECA78A /* Ubuntu-Light.ttf */ = {isa = PBXFileReference; name = "Ubuntu-Light.ttf"; path = "../app/assets/fonts/Ubuntu-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		03821618BD424DE694E6FC25 /* Ubuntu-LightItalic.ttf */ = {isa = PBXFileReference; name = "Ubuntu-LightItalic.ttf"; path = "../app/assets/fonts/Ubuntu-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		EB8428CA4DA943628F227E86 /* Ubuntu-Medium.ttf */ = {isa = PBXFileReference; name = "Ubuntu-Medium.ttf"; path = "../app/assets/fonts/Ubuntu-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		3588004F09E348E88779889B /* Ubuntu-MediumItalic.ttf */ = {isa = PBXFileReference; name = "Ubuntu-MediumItalic.ttf"; path = "../app/assets/fonts/Ubuntu-MediumItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E534BA029179463DBEE5C26F /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; name = "Ubuntu-Regular.ttf"; path = "../app/assets/fonts/Ubuntu-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D95E5436CC2A4AE4879582DC /* UFL.txt */ = {isa = PBXFileReference; name = "UFL.txt"; path = "../app/assets/fonts/UFL.txt"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EE0085EFD03F427A98F855BC /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Ubuntu-Bold.ttf"; path = "../app/assets/fonts/Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +178,7 @@
 			sourceTree = "<group>";
 		};
 		E7FFB9B37DE34E71B9A4A5A4 /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				3C9CF5D549B1419B974C6572 /* Comfortaa-Bold.ttf */,
 				BCE46637345145379C926424 /* Comfortaa-Light.ttf */,
@@ -196,8 +196,8 @@
 				D95E5436CC2A4AE4879582DC /* UFL.txt */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
 			path = "";
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -629,7 +629,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -637,6 +637,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -657,12 +658,18 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -700,9 +707,13 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION,
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -720,12 +731,18 @@
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
