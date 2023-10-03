@@ -6,11 +6,11 @@ import {
 import AppText from '../components/AppText';
 import DashboardLayout from '../layouts/DashboardLayout';
 
-function AboutScreen(): JSX.Element {
+function PaymentScreen(): JSX.Element {
 
   return (
     <DashboardLayout>
-      <AppText> About Page for about people </AppText>
+      <AppText>Payment Page for about people </AppText>
     </DashboardLayout>
 
   );
@@ -18,4 +18,4 @@ function AboutScreen(): JSX.Element {
 
 const styles = StyleSheet.create({});
 
-export default AboutScreen;
+export default PaymentScreen;

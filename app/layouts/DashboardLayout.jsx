@@ -15,7 +15,7 @@ export default function DashboardLayout({children}) {
     <SafeAreaView style={styles.main}>
       <View style={styles.top}>
         <AppText
-          style={{marginBottom: 10, fontSize: (phoneFontScale * 40) / 2}}>
+          style={{marginBottom: 20, fontSize: (phoneFontScale * 40) / 2}}>
           Adekoya Daniel
         </AppText>
       </View>
