@@ -31,10 +31,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   top: {
-    paddingHorizontal: (phoneWidth * 0.05) / 2,
+    paddingHorizontal: (phoneWidth * 0.1) / 2,
   },
   inner: {
-    paddingHorizontal: (phoneWidth * 0.04) / 2,
+    paddingHorizontal: (phoneWidth * 0.08) / 2,
     backgroundColor: '#ffffff',
   },
 });
