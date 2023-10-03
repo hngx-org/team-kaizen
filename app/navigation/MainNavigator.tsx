@@ -7,6 +7,8 @@ import HomeIcon from '../assets/icons/homeIcon';
 import WalletIcon from '../assets/icons/walletIcon';
 import { phoneHeight } from '../utils/dimensions';
 import PaymentScreen from '../screens/Payment';
+import ProfileIcon from '../assets/icons/profileicon';
+import ProfileScreen from '../screens/Profile';
 
 
 
@@ -25,7 +27,7 @@ function MainScreen() {
         )
       }} />
 
-      <Tab.Screen name="About" component={PaymentScreen} options={{
+      <Tab.Screen name="Payment" component={PaymentScreen} options={{
         headerShown: false,
         tabBarShowLabel: false,
         tabBarIcon: ({ color, size, focused }) => (
@@ -33,6 +35,13 @@ function MainScreen() {
         )
       }} />
 
+      <Tab.Screen name="Profile" component={ProfileScreen} options={{
+        headerShown: false,
+        tabBarShowLabel: false,
+        tabBarIcon: ({ color, size, focused }) => (
+          <ProfileIcon fill={focused ? "#18181B" : '#c9c9c9'} />
+        )
+      }} />
     </Tab.Navigator>
   );
 }
