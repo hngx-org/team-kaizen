@@ -20,6 +20,7 @@ export default function AppButton({
         borderRadius: 10,
         marginBottom: 10,
         marginTop: 20,
+
         ...style,
       }}>
       <AppText
@@ -35,7 +36,7 @@ export default function AppButton({
           color: '#FFFFFF',
           ...style,
         }}>
-        {title}
+        {disabled ? 'Loading...' : title}
       </AppText>
     </TouchableOpacity>
   );

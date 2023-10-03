@@ -15,7 +15,7 @@ export default function AppInput({
   setText,
   placeholder = 'placeholder',
   style,
-  label = 'Label',
+  label,
   multiline = false,
   maxLength,
   numberOfLines,
@@ -27,7 +27,7 @@ export default function AppInput({
       style={{
         width: '100%',
       }}>
-      <AppText style={styles.label}>{label}</AppText>
+      {label && <AppText style={styles.label}>{label}</AppText>}
       <View
         style={{
           marginBottom: (phoneHeight * 0.07) / 2,
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     paddingVertical: (phoneHeight * 0.034) / 2,
     paddingHorizontal: (phoneWidth * 0.1) / 2,
     backgroundColor: 'rgba(0, 0, 0, 0.05)',
-    fontSize: (phoneFontScale * 26) / 2,
+    fontSize: (phoneFontScale * 36) / 2,
     borderRadius: 10,
     color: '#333333',
   }),
