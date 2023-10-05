@@ -51,13 +51,15 @@ export default function DashboardLayout({children, geData}) {
       .then(data => data)
       .then(value => {
         setDetails(value);
+        if (!value) {
+          navigation.navigate('Login');
+        }
       });
   };
 
   useEffect(() => {
     getMain();
   }, []);
-
   console.log(details);
   const scrollViewRef = useRef();
 

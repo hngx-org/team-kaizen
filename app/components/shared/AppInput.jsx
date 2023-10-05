@@ -22,6 +22,7 @@ export default function AppInput({
   secureTextEntry,
 }) {
   const [color, setColor] = useState('#333333');
+  const [show, setShow] = useState(secureTextEntry);
   return (
     <View
       style={{
@@ -49,8 +50,26 @@ export default function AppInput({
           numberOfLines={numberOfLines}
           multiline={multiline}
           maxLength={maxLength}
-          secureTextEntry={secureTextEntry}
+          secureTextEntry={show}
         />
+        {secureTextEntry && (
+          <AppText
+            onPress={() => {
+              setShow(!show);
+            }}
+            style={{
+              backgroundColor: '#8c8c8ce3',
+              color: '#fff',
+              padding: 8,
+              borderRadius: 10,
+              opacity: 0.6,
+              fontSize: 10,
+              marginTop: 10,
+              alignSelf: 'flex-start',
+            }}>
+            Show Password
+          </AppText>
+        )}
       </View>
     </View>
   );

@@ -34,20 +34,24 @@ export default function SignUpScreen({navigation}) {
       details?.password &&
       details?.confirm_password
     ) {
-      setError();
-      setLoading(true);
-      console.log('loading');
-      setResponse();
-      try {
-        const data = await ApiService.registerUser(details);
-        console.log(data);
-        setLoading(false);
-        storeDetails('details', data?.data);
-        setResponse(data);
-      } catch (err) {
-        console.log(err);
-        setLoading(false);
-        setError(err);
+      if (details?.password === details?.confirm_password) {
+        setError();
+        setLoading(true);
+        console.log('loading');
+        setResponse();
+        try {
+          const data = await ApiService.registerUser(details);
+          console.log(data);
+          setLoading(false);
+          storeDetails('details', data?.data);
+          setResponse(data);
+        } catch (err) {
+          console.log(err);
+          setLoading(false);
+          setError(err);
+        }
+      } else {
+        setError("Passwords don't match");
       }
     } else {
       setError('Please fill all fields');
@@ -85,13 +89,14 @@ export default function SignUpScreen({navigation}) {
         placeholder="Type in Password"
         secureTextEntry={true}
       />
-      <AppText style={{color: 'red'}}>{error && 'Please Try Again'}</AppText>
+      <AppText style={{color: 'red'}}>{error}</AppText>
       <AppText style={{color: 'green'}}>
         {JSON.stringify(response && 'Account Created')}
       </AppText>
 
       <AppButton
-        title="Sign up"
+        disabled={loading}
+        title="Sign Up"
         onPress={() => {
           registerUser();
         }}

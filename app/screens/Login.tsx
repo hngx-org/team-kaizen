@@ -73,9 +73,6 @@ function LoginScreen({navigation}): JSX.Element {
         secureTextEntry={true}
       />
       <AppText style={{color: 'red'}}>{error && 'Please Try Again'}</AppText>
-      <AppText style={{color: 'green'}}>
-        {JSON.stringify(response && 'Welcome back')}
-      </AppText>
 
       <AppButton
         disabled={loading}

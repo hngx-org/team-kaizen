@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   StyleSheet,
@@ -9,8 +9,38 @@ import {
 } from 'react-native';
 import {phoneFontScale, phoneHeight} from '../utils/dimensions';
 import AppText from '../components/AppText';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {useNavigation} from '@react-navigation/native';
 
 const AuthLayouts = ({children, title, desc}) => {
+  const navigation = useNavigation();
+
+  const [details, setDetails] = useState();
+
+  const getData = async () => {
+    try {
+      const jsonValue = await AsyncStorage.getItem('details');
+      return jsonValue != null ? JSON.parse(jsonValue) : null;
+    } catch (e) {
+      // error reading value
+      console.log(e);
+    }
+  };
+
+  const getMain = () => {
+    getData()
+      .then(data => data)
+      .then(value => {
+        setDetails(value);
+        if (value) {
+          navigation.navigate('Main');
+        }
+      });
+  };
+
+  useEffect(() => {
+    getMain();
+  }, []);
   return (
     <SafeAreaView style={styles.main}>
       <View style={{paddingHorizontal: 34, paddingVertical: 50}}>
