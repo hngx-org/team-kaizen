@@ -7,6 +7,7 @@ import AppInput from '../components/shared/AppInput';
 import { ApiService } from '../services/services';
 import AppButton from '../components/shared/AppButton';
 
+
 function HomeScreen({ navigation }): JSX.Element {
   const [details, setDetails] = useState();
   const storeDetails = async (itemKey: any, itemVal: any) => {
@@ -48,10 +49,11 @@ function HomeScreen({ navigation }): JSX.Element {
       setResponse();
       setLoading(true);
       setError();
-      /*   if (history?.includes(newInput)) {
-  
-        } */
-      setHistory(current => [...current, `user: ${newInput}`])
+      if (history?.includes(newInput)) {
+        console.log('match')
+      } else {
+        setHistory(current => [...current, `user: ${newInput}`])
+      }
       try {
         const data = await ApiService.chatWithAI({
           history: history,
@@ -61,26 +63,32 @@ function HomeScreen({ navigation }): JSX.Element {
         console.log('input', newInput, inputData)
         setResponse(data);
         setLoading(false);
+        //setHistory(current => [...current.filter((item => item.split(' ').include('error:'))), `AI: ${data?.message}`])
         setHistory(current => [...current, `AI: ${data?.message}`])
+        setInputData()
       } catch (err) {
-        console.log('err', err);
-        setLoading(false);
-        setError([err?.response?.data?.message, err?.response?.data?.error, err?.response?.data?.content]);
+        if (err) {
+          console.log('err', err);
+          setLoading(false);
+          setHistory(current => [...current, `error: ${[err?.response?.data?.message, err?.response?.data?.error, err?.response?.data?.content]}`])
+          setError([err?.response?.data?.message, err?.response?.data?.error, err?.response?.data?.content]);
+        }
       }
     } else {
       Alert.alert('Ask a question');
       setError()
     }
   };
-  console.log('his', history?.includes(inputData), newInput, newRes, '')
-  const title = 'Big food bowwn'
+  console.log('hist', history)
+  console.log(newInput, 'val2')
+
   return (
-    <DashboardLayout>
-      <View style={{ position: 'absolute', top: '0', width: '100%' }}>
+    <>
+      <View style={{ backgroundColor: 'white', padding: 20, left: 0, width: '100%' }}>
         <AppInput
           setText={(val) => {
             setInputData(val);
-            console.log(val, newInput)
+            console.log(val, newInput, 'val')
           }}
 
           placeholder="what would you like me to do for you"
@@ -97,73 +105,28 @@ function HomeScreen({ navigation }): JSX.Element {
           }}
         />
       </View>
-      <View style={{ opacity: 0, pointerEvents: 'none' }}>
-        <AppInput
-          setText={(val) => {
-            setInputData(val);
-            console.log(val, newInput)
-          }}
-          placeholder="what would you like me to do for you"
-        />
-        <AppButton
-          title="Ask"
-          disabled={loading}
-          onPress={() => {
-            chatWithAi();
-          }}
-        />
-      </View>
-      {error && <AppText style={{
-        backgroundColor: 'red',
-        color: '#fff',
-        padding: 20,
-        borderRadius: 20,
-      }}>{error && error.join(' ')}</AppText>}
+      <DashboardLayout>
 
-      <ScrollView>
+
         {history?.length === 0 && <AppText
-          style={{
-            backgroundColor: '#8c8c8ce3',
-            color: '#fff',
-            padding: 20,
-            borderRadius: 20,
-            opacity: 0.6,
-            marginTop: 40,
-            marginBottom: 10,
-          }}>
+          style={styles.empty}>
           What whould you like to do
         </AppText>}
         {history?.map((item, index) => {
-          return (item.split(" ").includes('user:') ?
-            <View style={{ flexDirection: 'row', marginTop: 10 }}>
-              <View style={{ height: 40, width: 40, alignItems: 'center', justifyContent: 'center', backgroundColor: '#8c8c8ce3', borderRadius: 1000, marginRight: 10 }}>
-                <AppText style={{ color: '#fff' }}>M E</AppText>
+          return (item.split(" ").includes('user:') || item.split(" ").includes('error:') ?
+            <View key={index} style={{ flexDirection: 'row', marginTop: 10 }}>
+              <View style={{ height: 40, width: 40, alignItems: 'center', justifyContent: 'center', backgroundColor: item.split(" ").includes('error:') ? 'red' : '#8c8c8ce3', borderRadius: 1000, marginRight: 10 }}>
+                <AppText style={{ color: '#fff' }}>{item.split(" ").includes('error:') ? '' : 'M E'}</AppText>
               </View>
               <AppText
-                key={index}
-                style={{
-                  backgroundColor: item.split(" ").includes('user:') ? '#8c8c8ce3' : '#000',
-                  color: '#fff',
-                  padding: 20,
-                  borderRadius: 20,
-                  marginBottom: 10,
-                  width: '60%'
 
-                }}>
-                {item.replace('user:', '-')}
+                style={styles.person(item)}>
+                {item.split(" ").includes('error:') ? item.replace('error:', '-') : item.replace('user:', '-')}
               </AppText>
             </View>
-            : <View style={{ flexDirection: 'row', marginLeft: 'auto' }}>
+            : <View key={index} style={{ flexDirection: 'row', marginLeft: 'auto' }}>
               <AppText
-                key={index}
-                style={{
-                  backgroundColor: item.split(" ").includes('user:') ? '#8c8c8ce3' : '#000',
-                  color: '#fff',
-                  padding: 20,
-                  borderRadius: 20,
-                  marginBottom: 10,
-                  width: '70%'
-                }}>
+                style={styles.ai(item)}>
                 {item.replace('AI:', '-')}
               </AppText>
               <View style={{ height: 40, width: 40, alignItems: 'center', justifyContent: 'center', backgroundColor: '#000000e2', borderRadius: 1000, marginLeft: 10 }}>
@@ -173,11 +136,47 @@ function HomeScreen({ navigation }): JSX.Element {
             </View>
           )
         })}
-      </ScrollView>
 
-    </DashboardLayout>
+      </DashboardLayout>
+    </>
   );
 }
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  person: item => ({
+    backgroundColor: item.split(" ").includes('user:') ? '#8c8c8ce3' : 'red',
+    color: '#fff',
+    padding: 20,
+    borderRadius: 20,
+    marginBottom: 10,
+    width: '60%'
+  }),
+  ai: item => ({
+    backgroundColor: item.split(" ").includes('user:') ? '#8c8c8ce3' : '#000',
+    color: '#fff',
+    padding: 20,
+    borderRadius: 20,
+    marginBottom: 10,
+    width: '60%',
+  }),
+  empty: {
+    backgroundColor: '#8c8c8ce3',
+    color: '#fff',
+    padding: 20,
+    borderRadius: 20,
+    opacity: 0.6,
+    marginTop: 40,
+    marginBottom: 10,
+  },
+  error: {
+    backgroundColor: 'red',
+    color: '#fff',
+    padding: 20,
+    borderRadius: 20,
+  },
+  lottie: {
+    width: 100,
+    height: 100
+  }
+});
 
 export default HomeScreen;

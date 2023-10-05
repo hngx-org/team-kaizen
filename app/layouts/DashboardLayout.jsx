@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {
   View,
   Text,
@@ -59,18 +59,23 @@ export default function DashboardLayout({children, geData}) {
   }, []);
 
   console.log(details);
+  const scrollViewRef = useRef();
 
   return (
     <SafeAreaView style={styles.main}>
       <View style={styles.top}>
         <AppText
           style={{marginBottom: 20, fontSize: (phoneFontScale * 40) / 2}}>
-          {details?.name.toUpperCase()}
+          {details?.name.toUpperCase()}'S AI
         </AppText>
       </View>
       <ScrollView
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
+        ref={scrollViewRef}
+        onContentSizeChange={() =>
+          scrollViewRef.current.scrollToEnd({animated: true})
         }
         style={styles.inner}>
         {children}
