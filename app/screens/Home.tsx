@@ -36,7 +36,6 @@ function HomeScreen({ navigation }): JSX.Element {
 
 
   const [inputData, setInputData] = useState('');
-  //const [history, setHistory] = useState(["user: Good Books about me", "AI: I think there should be a debug mode for the open AI package for now, because I can't count the number of accounts I created just to get a different cookie to work with.... please can you look into this that in this case can be done from the point of contact with the Open Ai Apis which Mr backend is, except they put optional variables which the mobile can use, we can do nada"])
   const [history, setHistory] = useState([])
 
 
