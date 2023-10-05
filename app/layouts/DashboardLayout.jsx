@@ -65,7 +65,7 @@ export default function DashboardLayout({children, geData}) {
       <View style={styles.top}>
         <AppText
           style={{marginBottom: 20, fontSize: (phoneFontScale * 40) / 2}}>
-          {details?.name}
+          {details?.name.toUpperCase()}
         </AppText>
       </View>
       <ScrollView

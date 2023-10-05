@@ -17,8 +17,11 @@ const Tab = createBottomTabNavigator();
 function MainScreen() {
   return (
     <Tab.Navigator screenOptions={{
-      tabBarStyle: { height: Platform.OS === 'ios' ? 100 : 70, paddingTop: phoneHeight * 0.03 / 2 },
-    }}>
+      tabBarStyle: {
+        height: Platform.OS === 'ios' ? 100 : 70,
+      },
+    }
+    } >
       <Tab.Screen name="Home" component={HomeScreen} options={{
         headerShown: false,
         tabBarShowLabel: false,
@@ -42,7 +45,7 @@ function MainScreen() {
           <ProfileIcon fill={focused ? "#18181B" : '#c9c9c9'} />
         )
       }} />
-    </Tab.Navigator>
+    </ Tab.Navigator>
   );
 }
 
