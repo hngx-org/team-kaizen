@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {StyleSheet, View} from 'react-native';
 import AppText from '../components/AppText';
 import DashboardLayout from '../layouts/DashboardLayout';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import AppButton from '../components/shared/AppButton';
 
-function ProfileScreen({ navigation }): JSX.Element {
+function ProfileScreen({navigation}): JSX.Element {
   const [details, setDetails] = useState();
 
   const getData = async () => {
@@ -41,44 +41,58 @@ function ProfileScreen({ navigation }): JSX.Element {
   return (
     <DashboardLayout>
       <AppText>Name </AppText>
-      <AppText style={{
-        backgroundColor: '#bab9b7',
-        color: '#fff',
-        padding: 20,
-        marginTop: 10,
-        marginBottom: 10,
-        borderRadius: 20,
-      }}> {details?.name.toUpperCase()}</AppText>
+      <AppText
+        style={{
+          backgroundColor: '#bab9b7',
+          color: '#fff',
+          padding: 20,
+          marginTop: 10,
+          marginBottom: 10,
+          borderRadius: 20,
+        }}>
+        {' '}
+        {details?.name.toUpperCase()}
+      </AppText>
       <AppText>Email </AppText>
 
-      <AppText style={{
-        backgroundColor: '#bab9b7',
-        color: '#fff',
-        padding: 20,
-        marginTop: 10,
-        marginBottom: 10,
-        borderRadius: 20,
-      }}> {details?.email.toUpperCase()} </AppText>
+      <AppText
+        style={{
+          backgroundColor: '#bab9b7',
+          color: '#fff',
+          padding: 20,
+          marginTop: 10,
+          marginBottom: 10,
+          borderRadius: 20,
+        }}>
+        {' '}
+        {details?.email.toUpperCase()}{' '}
+      </AppText>
       <AppText>User ID </AppText>
 
-      <AppText style={{
-        backgroundColor: '#bab9b7',
-        color: '#fff',
-        padding: 20,
-        marginBottom: 10,
-        marginTop: 10,
-        borderRadius: 20,
-      }}>{details?.id} </AppText>
+      <AppText
+        style={{
+          backgroundColor: '#bab9b7',
+          color: '#fff',
+          padding: 20,
+          marginBottom: 10,
+          marginTop: 10,
+          borderRadius: 20,
+        }}>
+        {details?.id}{' '}
+      </AppText>
       <AppText>Credits Left </AppText>
 
-      <AppText style={{
-        backgroundColor: '#bab9b7',
-        color: '#fff',
-        padding: 20,
-        marginBottom: 50,
-        marginTop: 10,
-        borderRadius: 20,
-      }}>{details?.credits} </AppText>
+      <AppText
+        style={{
+          backgroundColor: '#bab9b7',
+          color: '#fff',
+          padding: 20,
+          marginBottom: 50,
+          marginTop: 10,
+          borderRadius: 20,
+        }}>
+        {details?.credits}{' '}
+      </AppText>
 
       <AppButton
         title="Logout"

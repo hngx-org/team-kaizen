@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {
+  ActivityIndicator,
   Alert,
   Linking,
   ScrollView,
   StyleSheet,
+  Text,
   TouchableOpacity,
   View,
 } from 'react-native';
@@ -13,9 +15,15 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import AppInput from '../components/shared/AppInput';
 import {ApiService} from '../services/services';
 import AppButton from '../components/shared/AppButton';
+import Voice from '@react-native-community/voice';
+import {LogBox} from 'react-native';
+LogBox.ignoreLogs(['new NativeEventEmitter']); // Ignore log notification by message
+LogBox.ignoreAllLogs(); //Ignore all log notifications
 
 function HomeScreen({navigation}): JSX.Element {
-  const [loading, setLoading] = useState();
+  const [result, setResult] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [loadingSpeech, setLoadingSpeech] = useState(false);
   const [response, setResponse] = useState();
   const [error, setError] = useState();
   const [open, setOpen] = useState(false);
@@ -25,10 +33,10 @@ function HomeScreen({navigation}): JSX.Element {
   const [history2, setHistory2] = useState([]);
 
   const newRes = response;
-  const newInput = inputData;
+  const newInput = result;
 
   const chatWithAi = async () => {
-    if (inputData) {
+    if (newInput) {
       setResponse();
       setLoading(true);
       setError();
@@ -47,6 +55,7 @@ function HomeScreen({navigation}): JSX.Element {
         //setHistory(current => [...current.filter((item => item.split(' ').include('error:'))), `AI: ${data?.message}`])
         setHistory(current => [...current, `AI: ${data?.message}`]);
         setInputData('');
+        setResult('');
       } catch (err) {
         console.log('newerror', err?.response);
         setLoading(false);
@@ -66,11 +75,58 @@ function HomeScreen({navigation}): JSX.Element {
         }
       }
     } else {
-      Alert.alert('Ask a question');
       setError();
+      setInputData('');
     }
   };
 
+  const speechStartHandler = e => {
+    console.log('speechStart successful', e);
+  };
+
+  const speechEndHandler = e => {
+    setLoading(false);
+    console.log('stop handler', e);
+  };
+
+  const speechResultsHandler = e => {
+    const text = e.value[0];
+    setResult(text);
+  };
+
+  const startRecording = async () => {
+    setLoadingSpeech(true);
+    try {
+      await Voice.start('en-Us');
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+
+  const stopRecording = async () => {
+    try {
+      await Voice.stop();
+      setInputData(result);
+      setLoadingSpeech(false);
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+
+  console.log('speech', result);
+
+  useEffect(() => {
+    Voice.onSpeechStart = speechStartHandler;
+    Voice.onSpeechEnd = speechEndHandler;
+    Voice.onSpeechResults = speechResultsHandler;
+    return () => {
+      Voice.destroy().then(Voice.removeAllListeners);
+    };
+  }, []);
+
+  useEffect(() => {
+    chatWithAi();
+  }, [newInput]);
   return (
     <>
       <View
@@ -130,7 +186,7 @@ function HomeScreen({navigation}): JSX.Element {
       </View>
       {open ? (
         <>
-          <View
+          {/* <View
             style={{
               backgroundColor: 'white',
               padding: 20,
@@ -153,6 +209,48 @@ function HomeScreen({navigation}): JSX.Element {
                 chatWithAi();
               }}
             />
+          </View> */}
+          <View
+            style={{
+              backgroundColor: 'white',
+              padding: 20,
+              width: '100%',
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+            }}>
+            <TouchableOpacity
+              onPress={startRecording}
+              disabled={loadingSpeech}
+              style={styles.speak}>
+              {loadingSpeech ? (
+                <View
+                  style={{
+                    alignItems: 'center',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                  }}>
+                  <AppText
+                    style={{
+                      color: 'white',
+                      fontWeight: 'bold',
+                    }}>
+                    Speak...
+                  </AppText>
+                  {/* <ActivityIndicator size="small" color="white" /> */}
+                </View>
+              ) : (
+                <Text style={{color: 'white', fontWeight: 'bold'}}>
+                  Ask a question
+                </Text>
+              )}
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              onPress={stopRecording}
+              disabled={!loadingSpeech}
+              style={styles.stop(loadingSpeech)}>
+              <Text style={{color: 'white', fontWeight: 'bold'}}>Complete</Text>
+            </TouchableOpacity>
           </View>
           <DashboardLayout>
             {history?.length === 0 && (
@@ -439,7 +537,7 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 20,
     marginBottom: 10,
-    width: '70%',
+    width: '80%',
   }),
   empty: {
     backgroundColor: '#8c8c8ce3',
@@ -467,6 +565,25 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
   },
+  speak: {
+    backgroundColor: '#10B981',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 15,
+    width: '48%',
+    borderRadius: 8,
+  },
+  stop: loading => ({
+    backgroundColor: '#376254',
+    opacity: loading ? 1 : 0.4,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 15,
+    borderRadius: 8,
+    width: '48%',
+  }),
 });
 
 export default HomeScreen;
