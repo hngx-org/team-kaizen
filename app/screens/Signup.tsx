@@ -89,7 +89,9 @@ export default function SignUpScreen({navigation}) {
         placeholder="Type in Password"
         secureTextEntry={true}
       />
-      <AppText style={{color: 'red'}}>{error}</AppText>
+      <AppText style={{color: 'red'}}>
+        {error && 'Error Creating User, please try again'}
+      </AppText>
       <AppText style={{color: 'green'}}>
         {JSON.stringify(response && 'Account Created')}
       </AppText>
