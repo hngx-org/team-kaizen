@@ -17,6 +17,7 @@ import {ApiService} from '../services/services';
 import AppButton from '../components/shared/AppButton';
 import Voice from '@react-native-community/voice';
 import {LogBox} from 'react-native';
+import Tts from 'react-native-tts';
 LogBox.ignoreLogs(['new NativeEventEmitter']); // Ignore log notification by message
 LogBox.ignoreAllLogs(); //Ignore all log notifications
 
@@ -54,11 +55,20 @@ function HomeScreen({navigation}): JSX.Element {
         setLoading(false);
         //setHistory(current => [...current.filter((item => item.split(' ').include('error:'))), `AI: ${data?.message}`])
         setHistory(current => [...current, `AI: ${data?.message}`]);
+        Tts.speak(data?.message, {
+          androidParams: {
+            KEY_PARAM_PAN: -1,
+            KEY_PARAM_VOLUME: 0.5,
+            KEY_PARAM_STREAM: 'STREAM_MUSIC',
+          },
+        });
         setInputData('');
         setResult('');
       } catch (err) {
         console.log('newerror', err?.response);
         setLoading(false);
+        Tts.speak(err?.response?.data?.message);
+
         if (err.message === 'Network Error') {
           setError([
             err?.message,
@@ -96,6 +106,7 @@ function HomeScreen({navigation}): JSX.Element {
 
   const startRecording = async () => {
     setLoadingSpeech(true);
+    setError('');
     try {
       await Voice.start('en-Us');
     } catch (error) {
