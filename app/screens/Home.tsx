@@ -55,33 +55,27 @@ function HomeScreen({navigation}): JSX.Element {
         setLoading(false);
         //setHistory(current => [...current.filter((item => item.split(' ').include('error:'))), `AI: ${data?.message}`])
         setHistory(current => [...current, `AI: ${data?.message}`]);
-        Tts.speak(data?.message, {
-          androidParams: {
-            KEY_PARAM_PAN: -1,
-            KEY_PARAM_VOLUME: 0.5,
-            KEY_PARAM_STREAM: 'STREAM_MUSIC',
-          },
-        });
+        Tts.speak(data?.message);
         setInputData('');
         setResult('');
       } catch (err) {
         console.log('newerror', err?.response);
         setLoading(false);
-        Tts.speak(err?.response?.data?.message);
 
         if (err.message === 'Network Error') {
-          setError([
-            err?.message,
-            err?.response?.data?.message,
-            err?.response?.data?.error,
-            err?.response?.data?.content,
-          ]);
+          setError([err?.message]);
         } else {
-          setError([
-            err?.response?.data?.message,
-            err?.response?.data?.error,
-            err?.response?.data?.content,
-          ]);
+          if (err?.response?.data?.content) {
+            setError([err?.response?.data?.content]);
+            Tts.speak(err?.response?.data?.content);
+          } else {
+            Tts.speak(
+              err?.response?.data?.message + ',' + err?.response?.data?.error,
+            );
+            setError([
+              err?.response?.data?.message + ', ' + err?.response?.data?.error,
+            ]);
+          }
         }
       }
     } else {
@@ -270,23 +264,13 @@ function HomeScreen({navigation}): JSX.Element {
             {history?.map((item, index) => {
               return item.split(' ').includes('user:') ||
                 item.split(' ').includes('error:') ? (
-                <View key={index} style={{flexDirection: 'row', marginTop: 10}}>
-                  <View
-                    style={{
-                      height: 40,
-                      width: 40,
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      backgroundColor: item.split(' ').includes('error:')
-                        ? 'red'
-                        : '#8c8c8ce3',
-                      borderRadius: 1000,
-                      marginRight: 10,
-                    }}>
-                    <AppText style={{color: '#fff'}}>
-                      {item.split(' ').includes('error:') ? '' : 'M E'}
-                    </AppText>
-                  </View>
+                <View
+                  key={index}
+                  style={{
+                    flexDirection: 'row',
+                    marginTop: 10,
+                    marginLeft: 'auto',
+                  }}>
                   <AppText style={styles.person(item)}>
                     {item.split(' ').includes('error:')
                       ? item.replace('error:', '-')
@@ -296,10 +280,7 @@ function HomeScreen({navigation}): JSX.Element {
               ) : (
                 <View
                   key={index}
-                  style={{flexDirection: 'row', marginLeft: 'auto'}}>
-                  <AppText style={styles.ai(item)}>
-                    {item.replace('AI:', '-')}
-                  </AppText>
+                  style={{flexDirection: 'row', marginRight: 'auto'}}>
                   <View
                     style={{
                       height: 40,
@@ -308,10 +289,13 @@ function HomeScreen({navigation}): JSX.Element {
                       justifyContent: 'center',
                       backgroundColor: '#000000e2',
                       borderRadius: 1000,
-                      marginLeft: 10,
+                      marginRight: 10,
                     }}>
-                    <AppText style={{color: '#fff'}}>A I</AppText>
+                    <AppText style={{color: '#fff'}}>AI</AppText>
                   </View>
+                  <AppText style={styles.ai(item)}>
+                    {item.replace('AI:', '-')}
+                  </AppText>
                 </View>
               );
             })}
@@ -327,7 +311,7 @@ function HomeScreen({navigation}): JSX.Element {
                     borderRadius: 1000,
                     marginRight: 10,
                   }}>
-                  <AppText style={{color: '#fff'}}></AppText>
+                  <AppText style={{color: '#fff'}}>ER</AppText>
                 </View>
                 <AppText style={styles.error}>{error}</AppText>
               </View>
@@ -402,31 +386,31 @@ function HomeScreen({navigation}): JSX.Element {
             {history2?.map((item, index) => {
               return item.split(' ').includes('user:') ||
                 item.split(' ').includes('error:') ? (
-                <View key={index} style={{flexDirection: 'row', marginTop: 10}}>
+                <View
+                  key={index}
+                  style={{
+                    flexDirection: 'row',
+                    marginTop: 10,
+                    marginLeft: 'auto',
+                  }}>
+                  <AppText style={styles.person(item)}>
+                    {item.replace('user:', '-')}
+                  </AppText>
+                </View>
+              ) : (
+                <View key={index} style={{flexDirection: 'row'}}>
                   <View
                     style={{
                       height: 40,
                       width: 40,
                       alignItems: 'center',
                       justifyContent: 'center',
-                      backgroundColor: item.split(' ').includes('error:')
-                        ? 'red'
-                        : '#8c8c8ce3',
+                      backgroundColor: '#000000e2',
                       borderRadius: 1000,
                       marginRight: 10,
                     }}>
-                    <AppText style={{color: '#fff'}}>
-                      {item.split(' ').includes('error:') ? '' : 'M E'}
-                    </AppText>
+                    <AppText style={{color: '#fff'}}>P</AppText>
                   </View>
-                  <AppText style={styles.person(item)}>
-                    {item.replace('user:', '-')}
-                  </AppText>
-                </View>
-              ) : (
-                <View
-                  key={index}
-                  style={{flexDirection: 'row', marginLeft: 'auto'}}>
                   <AppText
                     onPress={() => {
                       if (item?.split(' ').includes('AI2:')) {
@@ -462,18 +446,6 @@ function HomeScreen({navigation}): JSX.Element {
                       </>
                     )}
                   </AppText>
-                  <View
-                    style={{
-                      height: 40,
-                      width: 40,
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      backgroundColor: '#000000e2',
-                      borderRadius: 1000,
-                      marginLeft: 10,
-                    }}>
-                    <AppText style={{color: '#fff'}}>A I</AppText>
-                  </View>
                 </View>
               );
             })}
@@ -518,13 +490,13 @@ function HomeScreen({navigation}): JSX.Element {
   );
 }
 const styles = StyleSheet.create({
-  person: item => ({
-    backgroundColor: item.split(' ').includes('user:') ? '#8c8c8ce3' : 'red',
+  ai: item => ({
+    backgroundColor: item.split(' ').includes('user:') ? '#8c8c8ce3' : '#000',
     color: '#fff',
     padding: 20,
     borderRadius: 20,
     marginBottom: 10,
-    width: '60%',
+    width: '80%',
   }),
   loading: {
     backgroundColor: '#525252e0',
@@ -542,13 +514,14 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     width: '60%',
   },
-  ai: item => ({
-    backgroundColor: item.split(' ').includes('user:') ? '#8c8c8ce3' : '#000',
+  person: item => ({
+    backgroundColor: item.split(' ').includes('user:') ? '#8c8c8ce3' : 'red',
     color: '#fff',
     padding: 20,
     borderRadius: 20,
     marginBottom: 10,
-    width: '80%',
+    width: '70%',
+    marginRight: 10,
   }),
   empty: {
     backgroundColor: '#8c8c8ce3',
