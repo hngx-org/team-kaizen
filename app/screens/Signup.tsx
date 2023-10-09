@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 import React, {useState} from 'react';
 import {View, Text} from 'react-native';
+=======
+import React from 'react';
+import { useState } from 'react';
+import { View, Text } from 'react-native';
+>>>>>>> 5f9c063 (feat:AI Implementation)
 import AuthLayouts from '../layouts/AuthLayout';
 import AppText from '../components/AppText';
 import AppInput from '../components/shared/AppInput';
@@ -7,7 +13,9 @@ import AppButton from '../components/shared/AppButton';
 import {ApiService} from '../services/services';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+
 export default function SignUpScreen({navigation}) {
+<<<<<<< HEAD
   const storeDetails = async (itemKey: any, itemVal: any) => {
     try {
       const jsonValue = JSON.stringify(itemVal);
@@ -117,5 +125,53 @@ export default function SignUpScreen({navigation}) {
         </AppText>
       </View>
     </AuthLayouts>
+=======
+  const [namee, setNamee] = useState('');
+  const [emaile, setEmaile] = useState('');
+  const [passworde, setPassworde] = useState('');
+  const [confirmPassworde, setconfirmPassworde] = useState('');
+
+  const logInData = {
+    name: namee,
+    email:emaile,
+    password: passworde,
+    confirm_password: confirmPassworde
+  }
+
+  const SignUp = () => {
+    fetch('https://spitfire-interractions.onrender.com/api/auth/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(logInData)
+    })
+    .then(response => {
+        console.log("We have gotten response");
+        console.log(response.status);
+        console.log(response.body);
+        return response.json();})
+    .then(data => console.log(data)).catch((error) => {
+        console.log("Error with callback" + error);
+    })
+  };
+
+  return (
+    <AuthLayouts title='Sign up' desc="Your Very Own Virtual Assistant">
+        <AppInput label='Name' placeholder='Type in Name' setText={setNamee}/>
+         <AppInput label='Email Address' placeholder='Type in Email Address' setText={setEmaile} />
+        <AppInput label='Password' placeholder='Type in Password' secureTextEntry={true} setText={setPassworde}/>
+        <AppInput label='Confirm Password' placeholder='Type in Password' secureTextEntry={true} setText={setconfirmPassworde}/>
+        <AppButton title='Sign up' onPress={() => {
+          SignUp();
+          navigation.navigate('Main');
+        }} />
+   
+    <View>
+        <AppText>Already have an account? <AppText onPress={() => {
+navigation.navigate('Login')
+            
+        }} style={{color: '#10B981'}}>Login</AppText> </AppText>
+    </View>
+</AuthLayouts>
+>>>>>>> 5f9c063 (feat:AI Implementation)
   );
 }
